@@ -42,7 +42,7 @@ I'm no electrical engineer, let alone experience PCB designer or expert at choos
 
 Good luck everyone not need this at all and/or fixing it if you happen to need to!
 
-I didn't do actual reverse-engineering of any sort but a kind _(and this time actually qualified electrical engineer)_ redditer **(@jmdejoanelli)** pointed out the feeders may be using the main 12V rail and thus even the HR8833 might've been pushed to kind of its limits. If that's true I may be actually overdriving the IT ones. We'll see as I don't really feel like messing around again with it till I absolutely need to.
+I didn't do actual reverse-engineering of any sort but a kind _(and at this time an actually qualified electrical engineer)_ redditer **(@jmdejoanelli)** pointed out the feeders may be using the main 12V rail and thus even the HR8833 might've been pushed to kind of its limits. If that's true I may be actually overdriving the IT ones. We'll see as I don't really feel like messing around again with it till I absolutely need to.
 
 ## Warranty, scale of the issue
 I'm not saying this is a global issue but trying to search for similar ones, you can find quite a few. Regarding warranty, Bambu's support team responds pretty quickly _(within hours / less than a day)_ and while they're not really keen on immediately sending out each and every electrical part's replacements to you with no questions asked, they're generally helpful and positive about providing replacement parts after some questions answered, video proofs sent, testing done etc.
