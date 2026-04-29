@@ -51,3 +51,5 @@ I'm still hoping I'll receive a replacement motherboard under warranty, I didn't
 
 ## What will you need if you decide to do the same?
 A hot-air soldering station capable of ~400C _(kinda scary but that was the point at which I was effectively & quickly melting the oe solder without heating absolutely everything around it up too much)_, lots of damn flux, pair of tweezers, usual SMD IC soldering stuff :] 
+
+Bambu seemed to have used some good quality, high melting temp. solder and so I didn't clear/remove any of it and didn't add any on my own and I'd advise against it since this thing does drying _(could get toasty in there)_ and there's absolutely no thermal protection around the PCB. As mentioned, these ICs seem to be related/controlling the exhaust vent valves too so them falling off thus cutting down vent operation while drying and toasting stuff up could end really, really not nicely, to put shortly & nicely. So **keep all this in mind and obviously no responsibility taken for you melting down your AMS or even worse..**
