@@ -48,3 +48,6 @@ I didn't do actual reverse-engineering of any sort but a kind _(and at this time
 I'm not saying this is a global issue but trying to search for similar ones, you can find quite a few. Regarding warranty, Bambu's support team responds pretty quickly _(within hours / less than a day)_ and while they're not really keen on immediately sending out each and every electrical part's replacements to you with no questions asked, they're generally helpful and positive about providing replacement parts after some questions answered, video proofs sent, testing done etc.
 
 I'm still hoping I'll receive a replacement motherboard under warranty, I didn't just yet.
+
+## What will you need if you decide to do the same?
+A hot-air soldering station capable of ~400C _(kinda scary but that was the point at which I was effectively & quickly melting the oe solder without heating absolutely everything around it up too much)_, lots of damn flux, pair of tweezers, usual SMD IC soldering stuff :] 
