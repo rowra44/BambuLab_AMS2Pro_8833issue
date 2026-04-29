@@ -17,6 +17,7 @@ I opened a support ticket and carried on with life using only the other feeder u
 
 ## The issue identified
 The AMS itself isn't scarily complicated. It has a daughter board at the back that has connectors to the 2 exhaust valves, 2 connectors (power & data) for the actual main motherboard and towards the outside it has the normally visible connectors _(AMS rail connector, aux power, etc.)_. **Since only two of the feeder units were affected it cannot be a general data communication failure, which strongly suggests a failure at the point at which the business logic gets "translated" into actual physical/electrical signals/power/etc. That is the main motherboard or at least parts of it.**
+
 At first I tried checking the motherboard's components during usage with a laser thermometer _(I don't have an actual heat-cam)_ but it showed no real hotspots. However, I noticed there's an electrical whining noise when I tried spinning the faulty feeder positions' feeders _(from the P2S menu)_. Since by now I knew the feeders were fine themselves, I suspected a scenario where they don't get quite enough juice to start moving but they get _some_. I'm no electrical engineer by any means but **to me that mainly pointed to the motor driver ICs.**
 Since the board was kind of clearly cooked anyways I decided to dig deeper. I identified 3 dual motor driver ICs identified by **HR8833mte** as can be seen on the following pic:
 <img width="1992" height="550" alt="image" src="https://github.com/user-attachments/assets/d9608cb9-59d5-422c-a2ab-a3654b568fa0" />
