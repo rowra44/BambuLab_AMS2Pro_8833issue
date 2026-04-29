@@ -13,7 +13,8 @@ Admittedly, these parts are not equal and the vast majority was fed using the AM
 
 ## What I tried to identify the faulty part(s)
 Following Bambu's own procedures, I disassembled the AMS completely, checked all cable connections, looked for visible damage, contamination, stuck filaments whatsoever. Since there was absolutely nothing and I was already at this disassembled stage I decided to **swap the supposedly broken feeder unit with another**. After reassembly & testing the issue was stuck with the position and not with the feeder unit. Next I **swapped their connecting cables** as well which yielded no other results. At this point it was clear that **all the feeder units themselves are completely functional** and it's some issue before them.
-I opened a support ticket and carried on with life using only the other feeder units, obviously. By next day, another one showed the very same symptoms.
+
+I opened a support ticket and carried on with life using only the other feeder units, obviously. By next day, **another feeder position showed the very same symptoms.**
 
 ## The issue identified
 The AMS itself isn't scarily complicated. It has a daughter board at the back that has connectors to the 2 exhaust valves, 2 connectors (power & data) for the actual main motherboard and towards the outside it has the normally visible connectors _(AMS rail connector, aux power, etc.)_. **Since only two of the feeder units were affected it cannot be a general data communication failure, which strongly suggests a failure at the point at which the business logic gets "translated" into actual physical/electrical signals/power/etc. That is the main motherboard or at least parts of it.**
@@ -22,4 +23,22 @@ At first I tried checking the motherboard's components during usage with a laser
 Since the board was kind of clearly cooked anyways I decided to dig deeper. I identified 3 dual motor driver ICs identified by **HR8833mte** as can be seen on the following pic:
 <img width="1992" height="550" alt="image" src="https://github.com/user-attachments/assets/d9608cb9-59d5-422c-a2ab-a3654b568fa0" />
 
+Since the board was kind of clearly cooked by now and I have _some_ experience with hot air soldering ICs I decided to swap two of them around. By simply guessing their relative positions to the connectors of the affected feeder units' connectors, I decided to **swap the middle on with the right one** _(as can be seen on the picture)_. This **resulted in some "dead" feeder unit positions returning to life, another going down and strangely enough, one of the exhaust vents reported faulty.** Now this fortified my reasoning behind that it _may_ worth looking into the driver ICs and replacing them.
+
+## Replacements & results
+I couldn't really find an exact replacement IC. I could find some HR8833 ICs but somewhat different batches and only shipped from China. I thought I'd look at electrical suppliers locally and I found Texas Instruments DRV8833 ones. At this point reading up on it I realized that the **HR8833 is a chinese knock-off of the TI DRV88833.** It should've been pin/drop-in compatible so I was like why the hell not I got some TI DRV8833 ones and at this point I felt like going all-in and **replaced all 3x HR8833 with 3x TI DRV8833.** Immediately, **every feeder unit**, vent and just about everything **was perfectly fine & back to life**, normal operation.
+
+For the record here's the exact IC I used as replacements:
+<img width="1069" height="1313" alt="image" src="https://github.com/user-attachments/assets/67e2d1d1-e0c1-44f5-a340-a1553e8f3a48" />
+
+
+## Conclusion
+I'm no electrical engineer, let alone experience PCB designer or expert at choosing the right IC. Take anything I say with a grain of salt. I know there are thousands of units out there doing absolutely happily & fine for years and thousands of hours of usage. I'm just saying mine was cooked in just under a few months and few hundreds hours of home / hobbyist usage and was simply fixed by swapping the ICs with the real deal. Would it have been fixed by using the same cheapo chinesium knock-offs? Absolutely. Will it last for years now with the OG TI ones? I wouldn't know, time will tell. Especially that the HR ones seem to have a higher supply voltage tolerance, actually _(12.8V instead of 10.8V of the TI)_.
+
+I didn't do actual reverse-engineering of any sort but a kind _(and this time actually qualified electrical engineer)_ redditer **(@jmdejoanelli)** pointed out the feeders may be using the main 12V rail and thus even the HR8833 might've been pushed to kind of its limits. If that's true I may be actually overdriving the IT ones. We'll see as I don't really feel like messing around again with it till I absolutely need to.
+
+## When should you try looking into / replacing these ICs?
+* in case of one or more **feeder units don't work**, don't spin at all or spin weakly, basically any motoric issue generally caused by driver faults
+* my testing showed that these driver ICs are somehow related to the **exhaust vent valves** as well _(are those even motors?)_, so in case of their failures
+* especially if your mentioned issues seem isolated / not global and don't respond to swapping around identical parts, stay with the position and not the part!
 
