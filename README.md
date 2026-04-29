@@ -1,5 +1,10 @@
 # BambuLab_AMS2Pro_8833issue
-I created this repository to share my experience debugging the AMS2 Pro's issue with the 8833 motor driver ICs and how I managed to fix it.
+I created this repository to share my experience debugging my AMS2 Pro's issues with the feeders how I managed to fix it.
+
+## When should you try looking into this / keep reading?
+* in case of one or more **feeder units don't work**, don't spin at all or spin weakly. _(Basically any motoric issue generally caused by driver faults as you'll see)_
+* my testing showed the **exhaust vent valves** could be related as well _(are those even motors?)_, so in case of their failures
+* especially if your mentioned **issues** seem isolated / not global and **don't respond to swapping around identical parts, stay with the position and not the part**!
 
 ## My story / setup
 Last December I got a Bambu Lab P2S combo that comes with an AMS2 Pro. First month I've been using it kind of a lot, as you'd expect, then I had some time off and now I believe these last months I've been using it as a completely normal, expected residential hobbyist. The whole setup right now has **421 hours of runtime** and that includes printing and drying as well. I only ever use higher grade materials, either OE Bambu or Spectrum, Fiberion and such filaments. I am using quite a bit of abrasice GF/CF materials, not that it should matter at all in this scenario as you'll see.
@@ -35,10 +40,11 @@ For the record here's the exact IC I used as replacements:
 ## Conclusion
 I'm no electrical engineer, let alone experience PCB designer or expert at choosing the right IC. Take anything I say with a grain of salt. I know there are thousands of units out there doing absolutely happily & fine for years and thousands of hours of usage. I'm just saying mine was cooked in just under a few months and few hundreds hours of home / hobbyist usage and was simply fixed by swapping the ICs with the real deal. Would it have been fixed by using the same cheapo chinesium knock-offs? Absolutely. Will it last for years now with the OG TI ones? I wouldn't know, time will tell. Especially that the HR ones seem to have a higher supply voltage tolerance, actually _(12.8V instead of 10.8V of the TI)_.
 
+Good luck everyone not need this at all and/or fixing it if you happen to need to!
+
 I didn't do actual reverse-engineering of any sort but a kind _(and this time actually qualified electrical engineer)_ redditer **(@jmdejoanelli)** pointed out the feeders may be using the main 12V rail and thus even the HR8833 might've been pushed to kind of its limits. If that's true I may be actually overdriving the IT ones. We'll see as I don't really feel like messing around again with it till I absolutely need to.
 
-## When should you try looking into / replacing these ICs?
-* in case of one or more **feeder units don't work**, don't spin at all or spin weakly, basically any motoric issue generally caused by driver faults
-* my testing showed that these driver ICs are somehow related to the **exhaust vent valves** as well _(are those even motors?)_, so in case of their failures
-* especially if your mentioned issues seem isolated / not global and don't respond to swapping around identical parts, stay with the position and not the part!
+## Warranty, scale of the issue
+I'm not saying this is a global issue but trying to search for similar ones, you can find quite a few. Regarding warranty, Bambu's support team responds pretty quickly _(within hours / less than a day)_ and while they're not really keen on immediately sending out each and every electrical part's replacements to you with no questions asked, they're generally helpful and positive about providing replacement parts after some questions answered, video proofs sent, testing done etc.
 
+I'm still hoping I'll receive a replacement motherboard under warranty, I didn't just yet.
